@@ -5,7 +5,6 @@ import Typography from '@mui/material/Typography';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import Tooltip from '@mui/material/Tooltip';
 import GitHub from '../icons/GitHub';
 import withRoot from '../utils/withRoot';
@@ -75,7 +74,7 @@ class Layout extends React.Component {
         <AppBar classes={{ root: classes.appBar }}>
           <Toolbar classes={{ root: classes.toolBar }}>
             <IconButton onClick={this.toggleDrawer} color="inherit" aria-label="open drawer">
-              <MenuIcon />
+              📂
             </IconButton>
             <a href="/">
               <img className={classes.logo} src="/static/header.png" alt="Home" border="0" />

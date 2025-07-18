@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
-import DownloadIcon from '@mui/icons-material/CloudDownload';
-import BuildIcon from '@mui/icons-material/Build'; // eslint-disable-line import/no-unresolved
 import CodeSnippet from '../utils/CodeSnippet';
 import Layout from '../utils/layout';
 import withRoot from '../utils/withRoot';
@@ -46,15 +44,16 @@ class Homepage extends React.Component {
           />
 
           <div className={classes.stepWrapper}>
-            <DownloadIcon className={classes.stepIcon} />
+            <span className={classes.stepIcon}>📦</span>
             <Typography variant="h6">Installation</Typography>
           </div>
           <CodeSnippet withMargin language={'bash'} text={`npm install mui-datatables --save`} />
 
           <div className={classes.stepWrapper}>
-            <BuildIcon className={classes.stepIcon} />
+            <span className={classes.stepIcon}>🛠️</span>
             <Typography variant="h6">Usage</Typography>
           </div>
+
           <CodeSnippet
             language={'jsx'}
             text={`import MUIDataTable from "mui-datatables";

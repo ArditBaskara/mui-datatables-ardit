@@ -1,7 +1,5 @@
 import React from 'react';
 import IconButton from '@mui/material/IconButton';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import RemoveIcon from '@mui/icons-material/Remove';
 
 const ExpandButton = ({
   areAllRowsExpanded,
@@ -21,7 +19,9 @@ const ExpandButton = ({
           style={{ padding: 0 }}
           disabled={expandableRowsHeader === false}
           className={buttonClass}>
-          <RemoveIcon id="expandable-button" className={iconIndeterminateClass} />
+          <span id="expandable-button" className={iconIndeterminateClass}>
+            ➖
+          </span>
         </IconButton>
       ) : (
         <IconButton
@@ -29,7 +29,9 @@ const ExpandButton = ({
           style={{ padding: 0 }}
           disabled={expandableRowsHeader === false}
           className={buttonClass}>
-          <KeyboardArrowRightIcon id="expandable-button" className={iconClass} />
+          <span id="expandable-button" className={iconClass}>
+            ▶️
+          </span>
         </IconButton>
       )}
     </>

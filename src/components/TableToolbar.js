@@ -6,11 +6,6 @@ import Popover from './Popover';
 import TableFilter from './TableFilter';
 import TableViewCol from './TableViewCol';
 import TableSearch from './TableSearch';
-import SearchIcon from '@mui/icons-material/Search';
-import DownloadIcon from '@mui/icons-material/CloudDownload';
-import PrintIcon from '@mui/icons-material/Print';
-import ViewColumnIcon from '@mui/icons-material/ViewColumn';
-import FilterIcon from '@mui/icons-material/FilterList';
 import ReactToPrint, { PrintContextConsumer } from 'react-to-print';
 import find from 'lodash.find';
 import { withStyles } from 'tss-react/mui';
@@ -299,16 +294,17 @@ class TableToolbar extends React.Component {
       components = {},
       updateFilterByType,
     } = this.props;
+
     const { icons = {} } = components;
 
     const Tooltip = components.Tooltip || MuiTooltip;
     const TableViewColComponent = components.TableViewCol || TableViewCol;
     const TableFilterComponent = components.TableFilter || TableFilter;
-    const SearchIconComponent = icons.SearchIcon || SearchIcon;
-    const DownloadIconComponent = icons.DownloadIcon || DownloadIcon;
-    const PrintIconComponent = icons.PrintIcon || PrintIcon;
-    const ViewColumnIconComponent = icons.ViewColumnIcon || ViewColumnIcon;
-    const FilterIconComponent = icons.FilterIcon || FilterIcon;
+    const SearchIconComponent = icons.SearchIcon;
+    const DownloadIconComponent = icons.DownloadIcon;
+    const PrintIconComponent = icons.PrintIcon;
+    const ViewColumnIconComponent = icons.ViewColumnIcon;
+    const FilterIconComponent = icons.FilterIcon;
     const { search, downloadCsv, print, viewColumns, filterTable } = options.textLabels.toolbar;
     const { showSearch, searchText } = this.state;
 

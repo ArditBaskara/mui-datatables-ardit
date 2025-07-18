@@ -1,9 +1,6 @@
 import React from "react";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
-import CompareArrowsIcon from "@mui/icons-material/CompareArrows";
-import IndeterminateCheckBoxIcon from "@mui/icons-material/IndeterminateCheckBox";
-import BlockIcon from "@mui/icons-material/Block";
 import { withStyles } from "tss-react/mui";
 
 const defaultToolbarSelectStyles = {
@@ -45,17 +42,17 @@ class CustomToolbarSelect extends React.Component {
       <div className={classes.iconContainer}>
         <Tooltip title={"Deselect ALL"}>
           <IconButton className={classes.iconButton} onClick={this.handleClickDeselectAll}>
-            <IndeterminateCheckBoxIcon className={classes.icon} />
+            <span className={classes.icon}>🚫</span>
           </IconButton>
         </Tooltip>
         <Tooltip title={"Inverse selection"}>
           <IconButton className={classes.iconButton} onClick={this.handleClickInverseSelection}>
-            <CompareArrowsIcon className={[classes.icon, classes.inverseIcon].join(" ")} />
+            <span className={`${classes.icon} ${classes.inverseIcon}`}>🔁</span>
           </IconButton>
         </Tooltip>
         <Tooltip title={"Block selected"}>
           <IconButton className={classes.iconButton} onClick={this.handleClickBlockSelected}>
-            <BlockIcon className={classes.icon} />
+            <span className={classes.icon}>⛔</span>
           </IconButton>
         </Tooltip>
       </div>

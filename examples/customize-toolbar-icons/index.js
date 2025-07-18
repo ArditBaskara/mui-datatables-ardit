@@ -1,11 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import MUIDataTable from "../../src/";
-import SearchIcon from '@mui/icons-material/YoutubeSearchedFor';
-import PrintIcon from '@mui/icons-material/Receipt';
-import DownloadIcon from '@mui/icons-material/GetApp';
-import ViewColumnIcon from '@mui/icons-material/DynamicFeed';
-import FilterIcon from '@mui/icons-material/GroupWork';
+
 
 class Example extends React.Component {
 
@@ -54,18 +50,9 @@ class Example extends React.Component {
       rowsPerPage: 10,
     };
 
-    const components = {
-      icons: {
-        SearchIcon,
-        PrintIcon,
-        DownloadIcon,
-        ViewColumnIcon,
-        FilterIcon,
-      }
-    };
 
     return (
-      <MUIDataTable title={"ACME Employee list"} {...{data, columns, options, components}} />
+      <MUIDataTable title={"ACME Employee list"} {...{data, columns, options}} />
     );
 
   }

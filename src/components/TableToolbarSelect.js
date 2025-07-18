@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Paper from '@mui/material/Paper';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import DeleteIcon from '@mui/icons-material/Delete';
 import { withStyles } from 'tss-react/mui';
 import MuiTooltip from '@mui/material/Tooltip';
 
@@ -79,7 +78,16 @@ class TableToolbarSelect extends React.Component {
         ) : (
           <Tooltip title={textLabels.delete}>
             <IconButton className={classes.iconButton} onClick={onRowsDelete} aria-label={textLabels.deleteAria}>
-              <DeleteIcon className={classes.deleteIcon} />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className={classes.deleteIcon}
+                height="24"
+                viewBox="0 0 24 24"
+                width="24"
+                fill="currentColor">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path d="M16 9v10H8V9h8m-1.5-6h-5l-1 1H5v2h14V4h-4.5l-1-1zM18 7H6v12c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7z" />
+              </svg>
             </IconButton>
           </Tooltip>
         )}

@@ -1,9 +1,7 @@
 import React from 'react';
 import Grow from '@mui/material/Grow';
 import TextField from '@mui/material/TextField';
-import SearchIcon from '@mui/icons-material/Search';
 import IconButton from '@mui/material/IconButton';
-import ClearIcon from '@mui/icons-material/Clear';
 import { withStyles } from 'tss-react/mui';
 
 function debounce(func, wait, immediate) {
@@ -71,11 +69,28 @@ class _DebounceTableSearch extends React.Component {
     }, debounceWait);
 
     const clearIconVisibility = options.searchAlwaysOpen ? 'hidden' : 'visible';
+    const SearchSvg = ({ className }) => (
+      <svg
+        className={className}
+        xmlns="http://www.w3.org/2000/svg"
+        height="24"
+        width="24"
+        fill="currentColor"
+        viewBox="0 0 24 24">
+        <path d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 001.48-5.34C15.22 5.01 12.21 2 8.5 2S1.78 5.01 1.78 8.39 4.79 14.78 8.5 14.78c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zM8.5 13C6.01 13 4 10.99 4 8.5S6.01 4 8.5 4 13 6.01 13 8.5 10.99 13 8.5 13z" />
+      </svg>
+    );
+
+    const ClearSvg = () => (
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+      </svg>
+    );
 
     return (
       <Grow appear in={true} timeout={300}>
         <div className={classes.main}>
-          <SearchIcon className={classes.searchIcon} />
+          <SearchSvg className={classes.searchIcon} />
           <TextField
             variant={'standard'}
             className={classes.searchText}
@@ -92,7 +107,7 @@ class _DebounceTableSearch extends React.Component {
             {...(options.searchProps ? options.searchProps : {})}
           />
           <IconButton className={classes.clearIcon} style={{ visibility: clearIconVisibility }} onClick={onHide}>
-            <ClearIcon />
+            <ClearSvg />
           </IconButton>
         </div>
       </Grow>

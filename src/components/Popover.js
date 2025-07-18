@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import MuiPopover from '@mui/material/Popover';
 import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
 
 const Popover = ({ className, trigger, refExit, hide, content, ...providedProps }) => {
   const [isOpen, open] = useState(false);
@@ -70,8 +69,12 @@ const Popover = ({ className, trigger, refExit, hide, content, ...providedProps 
           onClick={handleRequestClose}
           className={closeIconClass}
           style={{ position: 'absolute', right: '4px', top: '4px', zIndex: '1000' }}>
-          <CloseIcon />
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
         </IconButton>
+
         {content}
       </MuiPopover>
     </>
